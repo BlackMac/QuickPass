@@ -12,6 +12,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		F811FF1D0BBBF5DA005DF46F /* pronpas.c in Sources */ = {isa = PBXBuildFile; fileRef = F811FF1B0BBBF5DA005DF46F /* pronpas.c */; };
+		F82A3C2E12D513C400C3E91F /* key-white.png in Resources */ = {isa = PBXBuildFile; fileRef = F82A3C2D12D513C400C3E91F /* key-white.png */; };
 		F84FD6420BB9A3BA0091DB1D /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = F84FD6410BB9A3BA0091DB1D /* key.png */; };
 		F8A50EBB0BBA63CF00996F6A /* quickpassshot.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A50EBA0BBA63CF00996F6A /* quickpassshot.png */; };
 		F8A50EBD0BBA63DB00996F6A /* windowbg.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A50EBC0BBA63DB00996F6A /* windowbg.png */; };
@@ -36,6 +37,7 @@
 		F811FF1B0BBBF5DA005DF46F /* pronpas.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = pronpas.c; sourceTree = "<group>"; };
 		F811FF1C0BBBF5DA005DF46F /* pronpas.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = pronpas.h; sourceTree = "<group>"; };
 		F811FFEC0BBC0117005DF46F /* trigramen.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = trigramen.h; sourceTree = "<group>"; };
+		F82A3C2D12D513C400C3E91F /* key-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-white.png"; sourceTree = "<group>"; };
 		F84FD6410BB9A3BA0091DB1D /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
 		F8A50EBA0BBA63CF00996F6A /* quickpassshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quickpassshot.png; sourceTree = "<group>"; };
 		F8A50EBC0BBA63DB00996F6A /* windowbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windowbg.png; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				F8A50EBC0BBA63DB00996F6A /* windowbg.png */,
 				F8A50EBA0BBA63CF00996F6A /* quickpassshot.png */,
 				F84FD6410BB9A3BA0091DB1D /* key.png */,
+				F82A3C2D12D513C400C3E91F /* key-white.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -175,7 +178,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "QuickPass" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* QuickPass */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,6 +206,7 @@
 				F8A50EBB0BBA63CF00996F6A /* quickpassshot.png in Resources */,
 				F8A50EBD0BBA63DB00996F6A /* windowbg.png in Resources */,
 				F8D6028B0C38F7C6006E1C0D /* QuickPass.icns in Resources */,
+				F82A3C2E12D513C400C3E91F /* key-white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,15 +266,15 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = 4.0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = QuickPass;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

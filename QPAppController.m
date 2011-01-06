@@ -111,7 +111,7 @@
 {
 	[self activateStatusMenu];
 	
-	if ([[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"firststart"] isEqualTo:@"YES"]) {
+	if ([[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"firststart"] isEqualTo:@"YES"] || YES) {
 		myTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(showInfo:) userInfo:nil repeats:NO];
 		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:@"NO" forKey:@"firststart"];
 	}
@@ -145,6 +145,7 @@
 	
     [theItem retain];
 	[theItem setImage:[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"key" ofType:@"png"]]];
+	[theItem setAlternateImage:[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"key-white" ofType:@"png"]]];
     [theItem setHighlightMode:YES];
 	[theItem setAction:@selector(refreshMenu)];
 
@@ -182,7 +183,7 @@
 	char *cstring;
 	
 	cstring=getPWD(loops);
-	NSMutableString *tmpPass=[NSMutableString stringWithCString:cstring];
+	NSMutableString *tmpPass=[NSMutableString stringWithCString:cstring encoding:NSUTF8StringEncoding];
 	free(cstring);
 	
 	if ([[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"proncap"] boolValue]) {
